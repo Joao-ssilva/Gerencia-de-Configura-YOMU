@@ -24,4 +24,4 @@ O usuário deve realizar seu cadastro (nome, e-mail, username e senha) para aces
 O YOMU foi um projeto trabalhoso com diversas pesquisas. No seu desenvolvimento, tivemos diversos problemas com a interface, back-end e documentação, mas enfrentamos todos essas dificuldades para entregar este projeto com uma boa qualidade, apesar de não ter concluído todas as funcionalidades listadas nos Requisitos Funcionais, conseguimos concluir boa parte e o projeto situa-se  de forma equilibrada.
 
 ## Acessar
-[Yomu](https://joao-ssilva.github.io/Yomu/)
+[Yomu](https://joao-ssilva.github.io/Gerencia-de-Configura-YOMU/)
