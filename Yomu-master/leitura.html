@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>YOMU - Biblioteca Online</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="rsc/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="css/rodape.css" type="text/css" />
+    <link rel="stylesheet" href="css/cabecalho.css" type="text/css" />
+    <link rel="stylesheet" href="css/padrao.css" type="text/css" />
+    <link rel="stylesheet" href="css/leitura.css" type="text/css" />
+    <link rel="stylesheet" href="css/navbar.css" type="text/css" />
+
+</head>
+
+<body>
+
+    <head>
+        <!--
+        <nav class="navbar bg-roxo fixed-top justify-content-center py-0" style="height: 90px;">
+            <a class="navbar-brand mx-0 my-0 py-0" href="#">
+                <img src="rsc/nome-yomu.png" width="150px">
+            </a>
+        </nav>
+-->
+        <nav class="navbar navbar-expand-lg fixed-top bg-roxo ">
+            <a class="navbar-brand" href="explorar.html">
+                <img src="rsc/nome-yomu.png" width="150px">
+            </a>
+            <button class="navbar-toggler btn btn-roxo" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase ativo" href="explorar.html">Explorar</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-uppercase " href="perfilPessoal.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase " href="publicacao.html">Publicar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="timeline.html">Timeline</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </head>
+
+    <!-- Fundo -->
+    <div class="container-fluid fundo"></div>
+    <!-- /Fundo -->
+    <!-- Quadrados dos lados -->
+    <div class="imagens-fundo">
+        <img src="rsc/detalhe-metade-quadrado-e.png" width="220px" class="img-fluid" style="z-index:2; position: absolute;margin-top: 6%">
+        <img src="rsc/detalhe-metade-quadrado-d.png" width="220px" class="img-fluid" style="z-index:2; position: absolute; right: 0; margin-top: 6%">
+    </div>
+    <!-- /Quadradados dos ladaos -->
+    <!-- Margin por baixo da navbar -->
+    <div style="padding-top: 350px;"></div>
+    <!-- /Margin por baixo da navbar -->
+
+    <div class="fundo-branco">
+        <div class="row justify-content-center mx-0 pt-5 pb-5">
+            <div class="col-sm-8 row border border-roxo pt-3">
+
+                <div class="col-sm-4 d-flex justify-content-center align-items-center" id="parte-capa">
+                    <img class="rounded-0 " id="capa" src="rsc/perfil-avatar.png" width="175" height="250">
+                </div>
+                <div class="col-sm-8" id="parte-conteudo">
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-8 autor">
+                            <h4 class="text-roxo">carregando...</h4>
+                        </div>
+                        <div class="col-sm-4 like text-center">
+                            <button class="btn btn-like"><i class="far fa-heart"></i></button>
+
+                        </div>
+                        <div class="col-sm-12 pt-3 titulo">
+                            <h3 class="text-roxo">carregando...</h3>
+
+                        </div>
+                        <div class="col-sm-12 pt-2 categoria">
+                            <span class="text-muted">carregando...</span>
+                        </div>
+                        <div class="col-sm-12 pt-2 descricao">
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-sm-12 row pt-3">
+                    <div class="col-sm-6  px-0">
+                        <h4 class="semi-btn">Capítulos</h4>
+                        <div class="caps col-sm-12">
+                        </div>
+                    </div>
+                    <div class="col-sm-6  px-0">
+                        <h4 class="semi-btn">Questionário</h4>
+                        <div class="quests  d-flex align-items-center justify-content-center">
+                            <button class="btn btn-secondary" id="btnQuestionario">Responder</button>
+                            <h6 id="msg-quest">Nenhum questionário encontrado!</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+    <!--Modais-->
+    <div class="modal fade carregamento" tabindex="-1" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body bg-transparent d-flex justify-content-center">
+                    <img src="rsc/naruto.gif" width="250" height="200">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAlerta" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Atenção:</h5>
+                </div>
+                <div class="modal-body">
+                    Você já respondeu este questionário.
+                </div>
+                <div class="modal-footer" id="btnsModalProgresso">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Okay!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modais-->
+
+    <!-- Footer -->
+    <footer class="page-footer pt-4 text-white rodape">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-md-left text-center">
+
+            <!-- Grid row -->
+            <div class="row">
+                <div class="col-md-4 pl-5 pt-3">
+                    <h5 class="text-uppercase">Sobre nós</h5>
+                    <p>O Yomu é uma biblioteca virtual<br>que visa proporcionar interação<br>entre seus usuários.</p>
+                </div>
+                <div class="col-md-4 pt-3">
+                    <h5 class="text-uppercase">Contate-nos</h5>
+                    <p>yomu.library@gmail.com</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="rsc/nome-yomu.png" width="200px">
+                    <p>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-square text-roxo f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram text-roxo i"></i></a>
+                        <a href="#" title="Youtube"><i class="fab fa-youtube text-roxo y"></i></a>
+                    </p>
+                </div>
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="#"> Yomu</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    <script src="js/jquery/jquery-3.4.0.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <script src="js/realtimefb.js" type="text/javascript"></script>
+    <script src="js/storagefb.js" type="text/javascript"></script>
+    <script src="js/leitura.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        let nomeLivro = window.sessionStorage.getItem('lerLivro');
+        let nickUsuario = window.sessionStorage.getItem('nickUsuario');
+        $('#btnQuestionario').hide();
+        $('#msg-quest').hide();
+        rootRef.child('Questionarios/' + nomeLivro).once('value').then(function(snap) {
+            if (snap.exists()) {
+                $('#btnQuestionario').show();
+                $('#msg-quest').hide();
+            } else {
+                $('#btnQuestionario').hide();
+                $('#msg-quest').show();
+            }
+        });
+
+        $('#btnQuestionario').on('click', function() {
+            rootRef.child('usuarios/' + nickUsuario + '/questionariosRespondidos/' + nomeLivro)
+                .once('value').then(function(snap) {
+                    console.log(snap.exists())
+                    if (snap.exists()) {
+                        $('#modalAlerta').modal('toggle');
+                    } else {
+                        window.open('responderQuestionario.html','_blank')
+                    }
+                });
+        })
+
+    </script>
+
+
+    <!--
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="js/app.js"></script>
+    -->
+
+</body>
+
+</html>

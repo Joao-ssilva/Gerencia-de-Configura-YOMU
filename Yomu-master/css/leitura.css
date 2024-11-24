@@ -1,0 +1,58 @@
+.descricao {
+    height: 150px;
+    overflow-y: scroll;
+}
+
+.semi-btn {
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    color: #fff;
+    background-color: #3f4194;
+    border-color: #3f4194;
+    width: 95%;
+    height: 40px
+}
+
+.caps {
+    height: 180px;
+    overflow-y: scroll;
+}
+
+.quests {
+    height: 180px;
+    overflow-y: scroll;
+}
+
+.cap-link{
+    color: black;
+}
+.cap-link:hover{
+    color: rebeccapurple;
+    cursor: pointer;
+}
+.cap-link {
+     list-style-type:none;
+    
+}
+
+.descricao{
+    background-color: rgb(	82, 63, 148,0.1)
+}
+
+.btn-like{
+    background-color: #cccdcf;
+}.btn-like:hover{
+    background-color: rgb(	82, 63, 148,0.5);
+}

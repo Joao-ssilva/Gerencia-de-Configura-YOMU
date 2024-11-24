@@ -1,0 +1,100 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.q {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+}
+
+.imagem-quadrado {
+    width: 500px;
+    animation-name: aparecer;
+    animation-duration: 1.5s;
+}
+
+.mensagens {
+    z-index: 1;
+    color: #fff;
+}
+
+.msg-1 {
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    color: #fff;
+}
+
+.msg-2 {
+    position: absolute;
+    left: 5%;
+    top: 75%;
+    color: #fff;
+}
+
+h4 {
+    color: #3f4194;
+}
+
+@media only screen and (max-width: 755px) {
+    .imagens-fundo {
+        display: none;
+    }
+}
+
+.slide-esq {
+    position: relative;
+    animation-name: slideEsq;
+    animation-duration: 1s
+}
+
+.slide-dir {
+    position: relative;
+    animation-name: slideDir;
+    animation-duration: 1s
+}
+
+.show {
+    animation-name: aparecer;
+    animation-duration: 4s
+}
+
+@keyframes slideEsq {
+    from {
+        right: 100px;
+        opacity: 0
+    }
+
+    to {
+        right: 0;
+        opacity: 1
+    }
+}
+
+@keyframes slideDir {
+    from {
+        left: 100px;
+        opacity: 0
+    }
+
+    to {
+        left: 0;
+        opacity: 1
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
