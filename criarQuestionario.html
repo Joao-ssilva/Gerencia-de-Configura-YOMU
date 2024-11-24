@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>YOMU - Biblioteca Online</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="rsc/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="css/quadradosFundo.css" type="text/css" />
+    <link rel="stylesheet" href="css/formularios.css" type="text/css" />
+    <link rel="stylesheet" href="css/rodape.css" type="text/css" />
+    <link rel="stylesheet" href="css/cabecalho.css" type="text/css" />
+    <link rel="stylesheet" href="css/criarQuestionario.css" type="text/css" />
+</head>
+
+<body>
+
+    <head>
+        <nav class="navbar bg-roxo fixed-top justify-content-center py-0" style="height: 90px;">
+            <a class="navbar-brand mx-0 my-0 py-0" href="#">
+                <img src="rsc/nome-yomu.png" width="150px">
+            </a>
+        </nav>
+    </head>
+
+    <!-- Fundo -->
+    <div class="container-fluid fundo "></div>
+    <!-- /Fundo -->
+    <div style="margin-top: 90px"></div>
+    <div class="d-flex align-items-center justify-content-center h-100" id="telaLogin">
+        <div class="quadradoEscuro-questionario">
+            <div class="bg-wine  text-white text-center pt-4" style="height: 50px;">
+                <h4 class="font-weight-bold text-uppercase" id="numeroQuestao">Questão 1</h4>
+            </div>
+            <div class="d-flex justify-content-center align-items-center h-100">
+                <form method="post" class="w-75" action="javascript: salvarQuestao()" name="questao">
+                    <div class="form-group">
+                        <label for="pergunta" class="text-white">Pergunta</label>
+                        <input class="form-control text-white bg-transparent borda-inferior rounded-0" type="text" id="pergunta" placeholder="Digite sua pergunta...">
+                    </div>
+                    <div class=" form-group  form-check">
+                        <input class="form-check-input" type="radio" name="radAlter" id="radio1">
+                        <label class="form-check-label text-white" for="radio1">
+                            Alternativa 1
+                        </label>
+                        <input class="form-control text-white  bg-transparent borda-inferior rounded-0" type="text" id="alternativa1" placeholder="Informe uma resposta...">
+                    </div>
+                    <div class=" form-group form-check">
+                        <input class="form-check-input" type="radio" name="radAlter" id="radio2">
+                        <label class="form-check-label text-white" for="radio2">
+                            Alternativa 2
+                        </label>
+                        <input class="form-control text-white  bg-transparent borda-inferior rounded-0" type="text" id="alternativa2" placeholder="Informe uma resposta...">
+                    </div>
+                    <div class="form-group  form-check">
+                        <input class="form-check-input" type="radio" name="radAlter" id="radio1">
+                        <label class="form-check-label text-white" for="radio2">
+                            Alternativa 3
+                        </label>
+                        <input class="form-control text-white  bg-transparent borda-inferior rounded-0" type="text" id="alternativa3" placeholder="Informe uma resposta...">
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <button class="btn btn-roxo mr-2">Anterior</button>
+                        <input type="submit" class="btn btn-roxo ml-2" value="Próximo">
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <button class="btn btn-outline-roxo ml-2" id="btnSalvar">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: 100px"></div>
+
+    <!--Modais-->
+    <div class="modal fade carregamento" tabindex="-1" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body bg-transparent d-flex justify-content-center">
+                    <img src="rsc/naruto.gif" width="250" height="200">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modais-->
+
+    <!-- Footer -->
+    <footer class="page-footer pt-4 text-white rodape">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-md-left text-center">
+
+            <!-- Grid row -->
+            <div class="row">
+                <div class="col-md-4 pl-5 pt-3">
+                    <h5 class="text-uppercase">Sobre nós</h5>
+                    <p>O Yomu é uma biblioteca virtual<br>que visa proporcionar interação<br>entre seus usuários.</p>
+                </div>
+                <div class="col-md-4 pt-3">
+                    <h5 class="text-uppercase">Contate-nos</h5>
+                    <p>yomu.library@gmail.com</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="rsc/nome-yomu.png" width="200px">
+                    <p>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-square text-roxo f"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram text-roxo i"></i></a>
+                        <a href="#" title="Youtube"><i class="fab fa-youtube text-roxo y"></i></a>
+                    </p>
+                </div>
+
+                <hr class="clearfix w-100 d-md-none pb-3">
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="#"> Yomu</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+
+    <script src="js/jquery/jquery-3.4.0.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/questionario.js"></script>
+    <script type="text/javascript">
+        setInterval(function() {
+            $('#numeroQuestao').html('Questão ' + nmrQuestao);
+        }, 1000)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+
+.fundo {
+    background-image: url(../rsc/fundo-index.png);
+    position: fixed;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+    margin-right: -10px;
+    padding-right: -10px;
+}
+
+.quadradoEscuro-cadastro {
+    position: relative;
+    top: 50px;
+    width: 500px;
+    height: 800px;
+    background-color: rgba(82, 63, 148, 0.5);
+}
+
+.quadradoEscuro-login {
+    position: relative;
+    top: 50px;
+    width: 500px;
+    height: 480px;
+    background-color: rgba(82, 63, 148, 0.5);
+}
+
+.quadradoEscuro-questionario {
+    position: relative;
+    top: 50px;
+    width: 500px;
+    height: 520px;
+    background-color: rgba(82, 63, 148, 0.5);
+    border-radius: 30px;
+}
+.quadradoEscuro-questionario-responder {
+    position: relative;
+    top: 50px;
+    width: 500px;
+    height: 100%;
+    background-color: rgba(82, 63, 148, 0.5);
+    border-radius: 30px;
+}
