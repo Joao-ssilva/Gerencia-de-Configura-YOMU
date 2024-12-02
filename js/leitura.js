@@ -38,7 +38,7 @@ function abrirCap(nomeLivro) {
             string = string + '<li class="border-bottom border-roxo cap-link" data-value="' + snap.key + '">' + snap.key + '</li>'
             $('.caps').html(string);
             $('.cap-link').click(function () {
-                
+
                 irParaPDf($(this).attr('data-value'), nomeLivro);
                 mostrarDescricao(nomeLivro);
             });
@@ -47,7 +47,7 @@ function abrirCap(nomeLivro) {
 }
 
 function irParaPDf(nomeCap, nomeLivro) {
-$('.carregamento').modal('show');
+    $('.carregamento').modal('show');
     let refArq = rootRef.child('livros')
         .child(nomeLivro)
         .child(nomeCap)
@@ -138,6 +138,8 @@ function addLike(nomeLivro) {
                         likes: ++snapLivro.val().likes
                     });
 
+                    atualizarPreferencias(snapLivro.val().categoria, 'somar')
+
                     /*Salva o nome do livro no nó 'likes'*/
                     rootRef.child('usuarios')
                         .child(snapUsuario.val().nick)
@@ -152,7 +154,10 @@ function addLike(nomeLivro) {
                     refLivro.update({
                         likes: --snapLivro.val().likes
                     });
-                     /*Apaga nome do livro do nó 'likes'*/
+
+                    atualizarPreferencias(snapLivro.val().categoria, 'subtrair')
+
+                    /*Apaga nome do livro do nó 'likes'*/
                     rootRef.child('usuarios')
                         .child(snapUsuario.val().nick)
                         .child('likes')
@@ -163,6 +168,39 @@ function addLike(nomeLivro) {
             });
         });
     });
+}
+
+// Atualiza preferências no localStorage ao dar "like" ou "unlike" em uma categoria
+function atualizarPreferencias(categoria, operacao = 'somar') {
+    // Obtém os dados armazenados previamente
+
+    const userEmail = window.localStorage.getItem('user')
+    const keyStorage = `recomendacao:${userEmail}`
+    const anterior = JSON.parse(window.localStorage.getItem(keyStorage)) || { preferencias: [] };
+
+    // Converte a matriz de preferências em um mapa para facilitar a manipulação
+    const preferenciasMap = new Map(anterior.preferencias);
+
+    // Atualiza a contagem para a categoria
+    const quantidadeAtual = preferenciasMap.get(categoria) || 0;
+    let novaQuantidade;
+
+    // Determina a nova quantidade com base na operação
+    if (operacao === 'somar') {
+        novaQuantidade = quantidadeAtual + 1;
+    } else if (operacao === 'subtrair') {
+        novaQuantidade = Math.max(0, quantidadeAtual - 1); // Garante que não fique negativo
+    } else {
+        console.error(`Operação inválida: ${operacao}`);
+        return;
+    }
+
+    // Atualiza o mapa com a nova quantidade
+    preferenciasMap.set(categoria, novaQuantidade);
+
+    // Converte o mapa de volta para uma matriz e salva no localStorage
+    const preferenciasAtualizadas = Array.from(preferenciasMap.entries());
+    window.localStorage.setItem(keyStorage, JSON.stringify({ preferencias: preferenciasAtualizadas }));
 }
 
 function verificaLike(nomeLivro) {

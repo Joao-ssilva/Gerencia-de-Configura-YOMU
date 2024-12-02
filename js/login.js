@@ -10,6 +10,7 @@ function realizarLogin() {
         .auth()
         .signInWithEmailAndPassword(usuario.emailInput.value, usuario.senhaInput.value)
         .then(function (result) {
+            window.localStorage.setItem('user', usuario.emailInput.value)
             console.log(result);
             //alert('Autenticado ' + usuario.emailInput.value);
             location.href = 'explorar.html';

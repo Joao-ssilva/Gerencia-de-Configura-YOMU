@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 let nmrId = 0;
 
-function exibirLivrosExplorar(livro, urlImgCapa) {
+function exibirLivrosExplorar(livro, urlImgCapa) {    
     let refLivro = rootRef.child('livros').child(livro.nome);
 
     refLivro.once('value', function (snap) {
